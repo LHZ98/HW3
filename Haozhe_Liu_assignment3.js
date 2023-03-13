@@ -61,36 +61,23 @@ nodes = tableInfo.tableContent.map((ele) => {
 tbody.append(...nodes);
 mytable.append(tbody);
 document.body.appendChild(mytable);
+
+// add new row function
 let addnew = document.createElement("tr");
 addnew.id = "add";
-let td = document.createElement("td");
-let input = document.createElement("input");
-input.type = "text";
-input.placeholder = "Name:";
-input.id = "name";
-td.appendChild(input);
-addnew.appendChild(td);
-td = document.createElement("td");
-input = document.createElement("input");
-input.type = "number";
-input.placeholder = "Age:";
-input.id = "age";
-td.appendChild(input);
-addnew.appendChild(td);
-td = document.createElement("td");
-input = document.createElement("input");
-input.type = "text";
-input.placeholder = "Phone:";
-input.id = "phone";
-td.appendChild(input);
-addnew.appendChild(td);
-td = document.createElement("td");
-input = document.createElement("input");
-input.type = "text";
-input.placeholder = "Address:";
-input.id = "address";
-td.appendChild(input);
-addnew.appendChild(td);
+const createtd = (addnew, text, id) => {
+  let td = document.createElement("td");
+  let input = document.createElement("input");
+  input.type = "text";
+  input.placeholder = text;
+  input.id = id;
+  td.appendChild(input);
+  addnew.appendChild(td);
+};
+createtd(addnew, "Name:", "name");
+createtd(addnew, "Age:", "age");
+createtd(addnew, "Phone:", "phone");
+createtd(addnew, "Address:", "address");
 
 let mybtn = document.createElement("button");
 mybtn.textContent = "ADD";
@@ -102,6 +89,7 @@ mybtn.onclick = function () {
     document.getElementById("phone").value,
     document.getElementById("address").value,
   ];
+  console.log(res);
   if (res.some((ele) => ele == "")) {
     alert("Wrong input");
     return;
@@ -119,8 +107,9 @@ mybtn.onclick = function () {
   document.getElementById("phone").value = "";
   document.getElementById("address").value = "";
 };
-td.appendChild(mybtn);
+addnew.appendChild(mybtn);
 mytable.appendChild(addnew);
+document.getElementById("age").type = "number";
 
 /*
   Question 2
