@@ -1,0 +1,20 @@
+td {
+  text-align: center;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+table,
+th,
+tr,
+td {
+  border: 2px solid rgb(16, 127, 219);
+}
+ol li::first-letter:hover {
+  font-size: 32px;
+  color: red;
+}
+ul li:nth-child(2n):hover {
+  color: blueviolet;
+}
