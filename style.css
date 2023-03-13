@@ -11,10 +11,11 @@ tr,
 td {
   border: 2px solid rgb(16, 127, 219);
 }
-ol li::first-letter:hover {
+ol li:hover::first-letter {
   font-size: 32px;
   color: red;
 }
 ul li:nth-child(2n):hover {
+  font-size: large;
   color: blueviolet;
 }
